@@ -28,8 +28,8 @@ namespace APIUser
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<APIUserContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("APIUserContext")));
+            services.AddDbContext<UserDbContext>(options =>
+            options.UseNpgsql(Configuration.GetConnectionString("UserDbContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
